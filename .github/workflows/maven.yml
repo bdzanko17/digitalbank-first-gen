@@ -52,4 +52,4 @@ jobs:
         script: |
           whoami
           ls -al
-          docke run -p 8080:8080 -d bdzanko17/testnaaplikacija
+          docker run -p 8080:8080 -d bdzanko17/testnaaplikacija:latest
