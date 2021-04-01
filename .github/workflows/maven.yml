@@ -24,4 +24,5 @@ jobs:
         script: |
           whoami
           ls -al
+          docker ps
 
