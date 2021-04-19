@@ -28,9 +28,12 @@ jobs:
             projectKey: "test"
             projectName: "test"
             args: >
-              -Dsonar.sources=src/main/java
-              -Dsonar.binaries=target/classes
+              -Dsonar.sources=src/main/java/
+              -Dsonar.binaries=target/classes/
               -Dsonar.exclusions=src/java/test/**
+              -Dsonar.language=java
+              -Dsonar.java.binaries=target/classes/ 
+              
               
 
 
