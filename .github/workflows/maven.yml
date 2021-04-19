@@ -51,8 +51,8 @@ jobs:
            - name: multiple command
              uses: appleboy/ssh-action@master
              with:
-                host: 20.52.216.40
-                username: azureuser
+                host: ec2-52-50-13-150.eu-west-1.compute.amazonaws.com
+                username: ec2-user
                 key: ${{ secrets.KEY }}
                 script: |
                   whoami
