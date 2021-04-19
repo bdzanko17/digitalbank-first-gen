@@ -43,6 +43,24 @@ jobs:
         context: .
         push: true
         tags: bdzanko17/testnaaplikacija:latest
+  sonarqubeScan:
+       runs-on: ubuntu-latest
+       steps:
+        - uses: actions/checkout@master
+        - name: SonarQube Scan
+          uses: kitabisa/sonarqube-action@v1.1.0
+          with:
+            host: ${{ secrets.SONARQUBE_HOST }}
+            login: ${{ secrets.SONARQUBETOKEN }}
+        - name: Start scan
+          uses: kitabisa/sonarqube-action@master
+          with:
+            projectBaseDir: "."
+            projectKey: "githubEvaluation"
+            projectName: "githubEvaluation"
+        
+         
+    
         
   deploy:
        runs-on: ubuntu-latest
