@@ -45,6 +45,7 @@ jobs:
         tags: bdzanko17/testnaaplikacija:latest
   sonarqubeScan:
        runs-on: ubuntu-latest
+       needs: build
        steps:
         - uses: actions/checkout@master
         - name: SonarQube Scan
@@ -55,7 +56,7 @@ jobs:
         - name: Start scan
           uses: kitabisa/sonarqube-action@master
           with:
-            projectBaseDir: "src"
+            projectBaseDir: "src/main/java/"
             projectKey: "githubEvaluation"
             projectName: "githubEvaluation"
         
