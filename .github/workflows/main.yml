@@ -18,7 +18,10 @@ jobs:
         - name: Build with Maven
           run: mvn clean package 
         - name: run comand
-          run: ls -a 
+          run: |
+            cd target
+            ls -a
+          
         - name: SonarQube Scan
           uses: kitabisa/sonarqube-action@v1.1.0
           with:
@@ -29,10 +32,9 @@ jobs:
             projectName: "test"
             args: >
               -Dsonar.sources=src/main/java/
-              -Dsonar.binaries=target/classes/
-              -Dsonar.exclusions=src/java/test/**
+              -Dsonar.binaries=target/classes
               -Dsonar.language=java
-              -Dsonar.java.binaries=target/classes/ 
+              -Dsonar.java.binaries=target/classes
               
               
 
