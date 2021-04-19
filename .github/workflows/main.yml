@@ -16,9 +16,8 @@ jobs:
        steps:
         - uses: actions/checkout@master
         - name: Build with Maven
-          run: mvn sonar:sonar \
+          run: mvn -s settings.xml sonar:sonar \
             -Dsonar.projectKey=test1 \
-            -Dsonar.host.url=http://20.52.216.40:9000 \
             -Dsonar.login=3bef7eae5da373b508c1713b93de9eacad49ef10
 
 
