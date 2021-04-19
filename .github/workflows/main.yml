@@ -32,9 +32,6 @@ jobs:
           with:
             host: ${{ secrets.SONARQUBE_HOST }}
             login: ${{ secrets.SONARQUBETOKEN }}
-        - name: Start scan
-          uses: kitabisa/sonarqube-action@master
-          with:
             projectBaseDir: "."
             projectKey: "test"
             projectName: "test"
