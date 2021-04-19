@@ -17,9 +17,8 @@ jobs:
         - uses: actions/checkout@master
         - name: Build with Maven
           run: mvn -s settings.xml sonar:sonar \
-            -Dsonar.projectKey=test1 \
-            -Dsonar.login=3bef7eae5da373b508c1713b93de9eacad49ef10
-
+             -Dsonar.projectKey=test1 \
+            -Dsonar.login=e22578fe2e38af24fb03ccf23549e9ab5265b652
 
 
 
