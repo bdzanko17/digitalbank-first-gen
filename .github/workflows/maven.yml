@@ -55,7 +55,7 @@ jobs:
         - name: Start scan
           uses: kitabisa/sonarqube-action@master
           with:
-            projectBaseDir: "."
+            projectBaseDir: "src"
             projectKey: "githubEvaluation"
             projectName: "githubEvaluation"
         
