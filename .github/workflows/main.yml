@@ -30,6 +30,7 @@ jobs:
             args: >
               -Dsonar.sources=src/main/java
               -Dsonar.binaries=target/classes
+              -Dsonar.exclusions=src/java/test/**
               
 
 
