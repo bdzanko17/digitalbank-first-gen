@@ -21,7 +21,13 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Maven
-      run: mvn clean package 
+      run: |
+            mvn clean package sonar:sonar \
+            -Dsonar.projectKey=githubEvaluation \
+            -Dsonar.host.url=http://20.52.216.40:9000 \
+            -Dsonar.login=f506276e03f21ddd28b88e601286966a4fadc72d \
+            -Dsonar.sources=src/main/java \
+            -Dsonar.java.binaries=target/classes 
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v1
   
@@ -43,25 +49,6 @@ jobs:
         context: .
         push: true
         tags: bdzanko17/testnaaplikacija:latest
-  sonarqubeScan:
-       runs-on: ubuntu-latest
-       needs: build
-       steps:
-        - uses: actions/checkout@master
-        - name: SonarQube Scan
-          uses: kitabisa/sonarqube-action@v1.1.0
-          with:
-            host: ${{ secrets.SONARQUBE_HOST }}
-            login: ${{ secrets.SONARQUBETOKEN }}
-        - name: Start scan
-          uses: kitabisa/sonarqube-action@master
-          with:
-            projectBaseDir: "src/main/java/"
-            projectKey: "githubEvaluation"
-            projectName: "githubEvaluation"
-        
-         
-    
         
   deploy:
        runs-on: ubuntu-latest
