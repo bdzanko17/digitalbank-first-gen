@@ -20,7 +20,7 @@ jobs:
           with:
             host: ${{ secrets.SONARQUBE_HOST }}
             login: ${{ secrets.SONARQUBETOKEN }}
-            projectBaseDir: "src"
+            projectBaseDir: "."
             projectKey: "test"
             projectName: "test"
 
