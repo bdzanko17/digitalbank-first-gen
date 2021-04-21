@@ -24,8 +24,8 @@ jobs:
       run: |
             mvn clean package sonar:sonar \
             -Dsonar.projectKey=githubEvaluation \
-            -Dsonar.host.url=http://20.52.216.40:9000 \
-            -Dsonar.login=f506276e03f21ddd28b88e601286966a4fadc72d \
+            -Dsonar.host.url=http://ec2-54-76-26-25.eu-west-1.compute.amazonaws.com:9000 \
+            -Dsonar.login=5ec26240f69b2f236a7ab1ce269e70729749e893 \
             -Dsonar.sources=src/main/java \
             -Dsonar.java.binaries=target/classes 
     - name: Set up QEMU
@@ -57,7 +57,7 @@ jobs:
            - name: multiple command
              uses: appleboy/ssh-action@master
              with:
-                host: ec2-52-50-13-150.eu-west-1.compute.amazonaws.com
+                host: ec2-54-76-26-25.eu-west-1.compute.amazonaws.com
                 username: ec2-user
                 key: ${{ secrets.KEY }}
                 script: |
