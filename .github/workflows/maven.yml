@@ -28,7 +28,11 @@ jobs:
         java-version: 1.8
     - name: Build and Run Tests
       run: mvn clean test
-        
+    - name: Publish Unit Test Results
+      uses: EnricoMi/publish-unit-test-result-action/composite@v1
+      if: always()
+      with:
+          files: target/**/*.xml  
     - name: Build with Maven
       run: |
             mvn package sonar:sonar \
@@ -37,11 +41,7 @@ jobs:
             -Dsonar.login=5ec26240f69b2f236a7ab1ce269e70729749e893 \
             -Dsonar.sources=src/main/java \
             -Dsonar.java.binaries=target/classes 
-    - name: Publish Unit Test Results
-      uses: EnricoMi/publish-unit-test-result-action/composite@v1
-      if: always()
-      with:
-          files: target/**/*.xml   
+ 
                   
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v1
