@@ -16,12 +16,6 @@ jobs:
        steps:
         - name: Checkout Code
           uses: actions/checkout@v1
-        - name: Cache Maven packages
-          uses: actions/cache@v2
-          with:
-            path: ~/.m2
-            key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-            restore-keys: ${{ runner.os }}-m2
         - name: Build and Run Tests
           run: mvn clean test
         - name: Publish Unit Test Results
