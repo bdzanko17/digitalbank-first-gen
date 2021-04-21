@@ -127,6 +127,8 @@ public class AtmLocationSearchTest extends BaseTest {
 		List<AtmLocation> locations = searchService.searchATMLocations(zipcode);
 
 		Assertions.assertTrue(locations.isEmpty());
+		Assertions.assertTrue(false);
+
 	}
 
 	/**
