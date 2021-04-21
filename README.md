@@ -1,4 +1,5 @@
 # Digital Bank
+[![Java CI with Maven](https://github.com/bdzanko17/digitalbank-first-gen/actions/workflows/maven.yml/badge.svg)](https://github.com/bdzanko17/digitalbank-first-gen/actions/workflows/maven.yml)
 
 Digital Bank is a sample application that was developed for exploratory purposes to examine development frameworks and techniques. The application is an example online digital banking application with integrations into other services.
 
