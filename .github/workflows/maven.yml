@@ -28,6 +28,7 @@ jobs:
             -Dsonar.login=5ec26240f69b2f236a7ab1ce269e70729749e893 \
             -Dsonar.sources=src/main/java \
             -Dsonar.java.binaries=target/classes 
+            ls
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v1
   
