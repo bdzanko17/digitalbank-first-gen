@@ -16,6 +16,10 @@ jobs:
        steps:
         - name: Checkout Code
           uses: actions/checkout@v1
+        - name: Set up JDK 1.8
+          uses: joschi/setup-jdk@v2
+          with:
+           java-version: '8'
         - name: Build and Run Tests
           run: mvn clean test
         - name: Publish Unit Test Results
